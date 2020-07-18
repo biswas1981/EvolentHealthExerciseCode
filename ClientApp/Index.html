@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.21/datatables.min.css" />
+    <link href="style/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+	
+    <script src="Script/jquery-3.5.1.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.21/datatables.min.js"></script>
+    <script type="text/javascript" src="script/dataTables.select.min.js"></script>
+	
+	
+
+
+    <script src="Script/pageScript.js"></script>
+</head>
+<body>
+
+    <div class="fixed-header">
+        <div class="container">
+            <nav>
+                <h3>Contact Record(s)</h3>
+            </nav>
+        </div>
+    </div>
+    <div class="container">
+
+        <div class="row bottonRow" >
+		    <button class="btn" id="btnCreate" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false"><i class="fa fa-plus" style="color:green"></i></button>
+            <button class="btn" id="btnEdit" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false"><i class="fa fa-edit" style="color:blue"></i></button>
+            <button class="btn" id="btnDelete"><i class="fa fa-trash" style="color:red"></i></button>
+        </div>
+        <div class="row">
+            <table id="tblContact" class="display" style="width:100%">
+                <thead>
+                    <tr>
+                        
+                        <th>Serial No.</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Phone Number</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+            </table>
+        </div>
+    </div>
+    <div class="fixed-footer">
+        <div class="container">Copyright &copy; 2020 Evolent Health</div>
+    </div>
+
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close modalClose" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><span id="modalHeaderSpan"></span></h4>
+      </div>
+      <div class="modal-body">
+        <form>
+		<input type="hidden" id="contactId" value="0">
+		<div class="form-group">
+			<label for="lblFirstName">First Name:</label>
+			<input type="text" class="form-control" id="lblFirstName">
+		</div>
+		<div class="form-group">
+			<label for="lblLastName">Last Name:</label>
+			<input type="text" class="form-control" id="lblLastName">
+		</div>
+		<div class="form-group">
+			<label for="lblEmail">Email address:</label>
+			<input type="email" class="form-control" id="lblEmail" placeholder="Email" required="required" data-error="Please enter a valid email.">
+		</div>
+		<div class="form-group">
+			<label for="lblPhone">Phone Number:</label>
+			<input type="tel" pattern="[0-9]{10}" class="form-control" id="lblPhone" placeholder="09831306823">
+		</div>
+		<div class="checkbox">
+			<label><input type="checkbox" id="chkStatus"> Status</label>
+		</div>
+			<button type="button" class="btn btn-default" id="btnSubmit">Submit</button>
+		</form>
+      </div>
+      <div class="modal-footer">
+	  <div class="alert alert-success" id="msgAlert">
+		
+	  </div>
+        <button type="button" class="btn btn-default modalClose" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+</body>
+</html>

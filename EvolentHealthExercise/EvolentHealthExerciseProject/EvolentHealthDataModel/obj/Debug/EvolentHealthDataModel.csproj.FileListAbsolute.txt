@@ -1,0 +1,5 @@
+D:\Work\EvolentHealthExercise\EvolentHealthExerciseProject\EvolentHealthDataModel\bin\Debug\EvolentHealthDataModel.dll
+D:\Work\EvolentHealthExercise\EvolentHealthExerciseProject\EvolentHealthDataModel\bin\Debug\EvolentHealthDataModel.pdb
+D:\Work\EvolentHealthExercise\EvolentHealthExerciseProject\EvolentHealthDataModel\obj\Debug\EvolentHealthDataModel.dll
+D:\Work\EvolentHealthExercise\EvolentHealthExerciseProject\EvolentHealthDataModel\obj\Debug\EvolentHealthDataModel.pdb
+D:\Work\EvolentHealthExercise\EvolentHealthExerciseProject\EvolentHealthDataModel\obj\Debug\EvolentHealthDataModel.csprojResolveAssemblyReference.cache
