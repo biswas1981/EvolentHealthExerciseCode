@@ -78,7 +78,7 @@
 		2)	http://13.71.49.131:3407/health/api/GetContactById/1
 		3)	http://13.71.49.131:3407/health/api/AddContact
 		4)	http://13.71.49.131:3407/health/api/EditContact
-		5)	http://13.71.49.131:3407/health/api/DeleteContact/10
+		5)	http://13.71.49.131:3407/health/api/DeleteContact/1
 
 
 		
