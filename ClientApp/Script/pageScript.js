@@ -1,7 +1,8 @@
 var host="http://localhost:1238/";
-var dataContactId=0;
+var dataContactId="0";
 $(function(){
 	$("#msgAlert").hide();
+	$("#btnEdit").prop('disabled', true);
 });
 
 $(document).ready(function () {
@@ -161,9 +162,13 @@ function DataReload()
 }
 
 $(document).on("click","#tblContact tbody tr", function(){
-	
-	dataContactId =  $(this).find("td").find("span")[0].dataset.id;
-	
+	if($(this).hasClass("selected")){
+		dataContactId =  $(this).find("td").find("span")[0].dataset.id;
+		$("#btnEdit").prop('disabled', false);
+	}
+	else{
+		ClearForm();
+	}
 });
 
 
@@ -174,23 +179,33 @@ function ClearForm()
 	$("#myModal .modal-body form input[type=email]").val("");
 	$("#myModal .modal-body form input[type=tel]").val("");
 	$("#myModal .modal-body form input[type=checkbox]").prop('checked', false);
+	$("#btnEdit").prop('disabled', true);
+	dataContactId="0";
 }
 
 
 $(document).on("click","#btnEdit",function(){
-	$("#modalHeaderSpan").text("Edit contact");
-	var selectedRowCell = $("#tblContact tbody tr.selected").find("td");
-	$("#contactId").val($(selectedRowCell).eq(0).find("span")[0].dataset.id);
-	$("#lblFirstName").val($(selectedRowCell)[1].textContent);
-	$("#lblLastName").val($(selectedRowCell)[2].textContent);
-	$("#lblEmail").val($(selectedRowCell)[3].textContent);
-	$("#lblPhone").val($(selectedRowCell)[4].textContent);
-	var statusText = $(selectedRowCell)[5].textContent;
 	
-	$("#chkStatus").prop('checked', statusText=="Active"?true:false);
+	var selectedRowCell = $("#tblContact tbody tr.selected").find("td");
+		if(selectedRowCell.length>0){
+		$("#modalHeaderSpan").text("Edit contact");	
+		$("#contactId").val($(selectedRowCell).eq(0).find("span")[0].dataset.id);
+		$("#lblFirstName").val($(selectedRowCell)[1].textContent);
+		$("#lblLastName").val($(selectedRowCell)[2].textContent);
+		$("#lblEmail").val($(selectedRowCell)[3].textContent);
+		$("#lblPhone").val($(selectedRowCell)[4].textContent);
+		var statusText = $(selectedRowCell)[5].textContent;
+		$("#chkStatus").prop('checked', statusText=="Active"?true:false);
+	}
+	else{
+		return false;
+	}
 });
 
 $(document).on("click","#btnDelete",function(){
+	
+	if(dataContactId!="0")
+	{
 	var isDelete = confirm('Are You Sure ?');
 	if(isDelete==true)
 	{
@@ -220,6 +235,7 @@ $(document).on("click","#btnDelete",function(){
 	    $("#msgAlert").addClass("alert-danger");		
     }
 	});
+	}
 	}
 });
 
