@@ -16,7 +16,7 @@ namespace EvolentHealthDataAccessLayer
         {
             try
             {
-                using (var dataContext = new EvolentHealthDBEntities())
+                using (var dataContext = new EvolentHealthDBNewEntities())
                 {
                     DataEntity.Contact contactData = new DataEntity.Contact
                     {
@@ -42,7 +42,7 @@ namespace EvolentHealthDataAccessLayer
         {
             try
             {
-                using (var dataContext = new EvolentHealthDBEntities())
+                using (var dataContext = new EvolentHealthDBNewEntities())
                 {
                     var result = dataContext.Contacts.Where(a => a.Id == contact.Id).FirstOrDefault();
                     if (result != null)
@@ -71,7 +71,7 @@ namespace EvolentHealthDataAccessLayer
         {
             try
             {
-                using (var dataContext = new EvolentHealthDBEntities())
+                using (var dataContext = new EvolentHealthDBNewEntities())
                 {
                     var result = dataContext.Contacts.Where(a => a.Id == id).FirstOrDefault();
                     if (result != null)
@@ -94,7 +94,7 @@ namespace EvolentHealthDataAccessLayer
         {
             try
             {
-                using (var dataContext = new EvolentHealthDBEntities())
+                using (var dataContext = new EvolentHealthDBNewEntities())
                 {
                     var result = dataContext.Contacts.Where(a => a.Id == id)
                         .Select(s => new EvolentHealthDataModel.Contact
@@ -128,7 +128,7 @@ namespace EvolentHealthDataAccessLayer
         {
             try
             {
-                using (var dataContext = new EvolentHealthDBEntities())
+                using (var dataContext = new EvolentHealthDBNewEntities())
                 {
                     var result = dataContext.Contacts.Where(a => status == null || a.Status == status)
                         .Select(s => new EvolentHealthDataModel.Contact

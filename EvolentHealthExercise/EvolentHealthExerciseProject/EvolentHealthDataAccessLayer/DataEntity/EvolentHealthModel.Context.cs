@@ -13,10 +13,10 @@ namespace EvolentHealthDataAccessLayer.DataEntity
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class EvolentHealthDBEntities : DbContext
+    public partial class EvolentHealthDBNewEntities : DbContext
     {
-        public EvolentHealthDBEntities()
-            : base("name=EvolentHealthDBEntities")
+        public EvolentHealthDBNewEntities()
+            : base("name=EvolentHealthDBNewEntities")
         {
         }
     

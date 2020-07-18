@@ -113,13 +113,6 @@
       <DependentUpon>EvolentHealthModel.edmx</DependentUpon>
       <LastGenOutput>EvolentHealthModel.cs</LastGenOutput>
     </Content>
-    <Content Include="EvolentHealthDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="EvolentHealthDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>EvolentHealthDB.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.1">
@@ -139,8 +132,6 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>EvolentHealthModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.Config" />
     <None Include="DataEntity\EvolentHealthModel.edmx.diagram">
       <DependentUpon>EvolentHealthModel.edmx</DependentUpon>

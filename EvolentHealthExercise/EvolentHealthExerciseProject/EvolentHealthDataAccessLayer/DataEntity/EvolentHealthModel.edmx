@@ -39,7 +39,7 @@
           <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
         </EntityType>
-        <EntityContainer Name="EvolentHealthDBEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="EvolentHealthDBNewEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Contacts" EntityType="Self.Contact" />
         </EntityContainer>
       </Schema>
@@ -47,7 +47,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="EvolentHealthDBModelStoreContainer" CdmEntityContainer="EvolentHealthDBEntities">
+        <EntityContainerMapping StorageEntityContainer="EvolentHealthDBModelStoreContainer" CdmEntityContainer="EvolentHealthDBNewEntities">
           <EntitySetMapping Name="Contacts">
             <EntityTypeMapping TypeName="EvolentHealthDBModel.Contact">
               <MappingFragment StoreEntitySet="Contact">
